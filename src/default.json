@@ -1,0 +1,58 @@
+{
+  "name": "XXX",
+  "info": [
+    {"icon": "icon-email", "label": "XXX@XXX.com"},
+    {"icon": "icon-phone", "label": "13012345678"},
+    {"icon": "icon-job", "label": "前端工程师"}
+  ],
+  "lists": [
+    {
+      "title": "教育经历",
+      "icon": "icon-edu",
+      "lists": [{
+        "title": "XXXX大学 - XX专业 （本科）",
+        "date": "2014.07~2018.06"
+      }]
+    },
+    {
+      "title": "工作经历",
+      "icon": "icon-work",
+      "lists": [{
+        "title": "XXXX公司 - 前端开发工程师",
+        "date": "2018.07~至今",
+        "icon": "icon-project",
+        "projects": [{
+          "title": "XX项目",
+          "date": "2019.12~2020.02",
+          "desc": "深度参与XX项目迭代XX的前端开发工作，独立承担并完成XX、XX、XXXX等功能点的开发",
+          "contents": [
+            "主要维护并修复XX、XX、XX等功能点bug若干",
+            "配合UI和后端，根据产品需求提供H5页面嵌入到后台模板",
+            "主要参与XXXXXXX的静态页面开发工作"
+          ]
+        },{
+          "title": "XX项目",
+          "date": "2019.08~2019.10",
+          "contents": [
+            "主要参与公司产品「XXXX」的前端开发工作，实现接入微博、微信、QQ等 第三方账号登录等功能。项目采用技术栈WordPress+NAMP",
+            "活动页面的开发（抽奖活动以及承接外包页面）"
+          ]
+        }]
+      }]
+    },{
+      "title": "技能清单",
+      "icon": "icon-skill",
+      "lists":[
+        "熟悉JavaScript，了解TypeScript，掌握ES6及以上常用语法",
+        "熟悉Vue.js开发项目",
+        "熟悉前端工程化，熟悉Webpack/Rollup.js等打包工具",
+        "了解Sass、Stylus等CSS预处理器",
+        "了解Flutter/小程序开发"
+      ]
+    },{
+      "title": "其他",
+      "icon": "icon-other",
+      "desc": "能快速上手新的框架"
+    }
+  ]
+}
