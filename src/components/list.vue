@@ -2,7 +2,7 @@
   <div class="list">
     <div class="list-title">
       <span class="title" :class="classes">{{isString?info:info.title}}</span>
-      <span class="date">{{info.date}}</span>
+      <span class="date" v-if="info.date">{{info.date|dateFilter}}</span>
     </div>
     <div class="list-content" v-if="!isString">
       <div class="list-desc" v-if="info.desc">{{info.desc}}</div>
@@ -10,7 +10,7 @@
         <div class="sub-list" v-for="(item, index) in info.projects" :key="index">
           <div class="sub-list-title">
             <span class="title" :class="[subClass(item.icon)]">{{item.title}}</span>
-            <span class="date">{{item.date}}</span>
+            <span class="date">{{item.date|dateFilter}}</span>
           </div>
           <div class="sub-list-content">
             <div class="list-desc" v-if="item.desc">{{item.desc}}</div>
@@ -26,6 +26,9 @@
 <script>
 function isString(obj) {
   return Object.prototype.toString.call(obj) === "[object String]";
+}
+function isObject(obj) {
+  return Object.prototype.toString.call(obj) === "[object Object]";
 }
 export default {
   name: "x-list",
@@ -49,6 +52,14 @@ export default {
     isString() {
       return isString(this.info)
     }
+  },
+  filters: {
+    dateFilter(input) {
+      if(isObject(input)) {
+        return `${input.start}~${input.end||"至今"}`
+      }
+      return input;
+    }
   }
 }
 </script>
@@ -57,6 +68,8 @@ export default {
   .list-title
     display flex
     line-height 2rem
+    margin-bottom .5rem
+    // color #666
     span 
       flex 1
     .title
@@ -68,7 +81,7 @@ export default {
   .sub-list
     padding-left 1rem
     &:not(:last-child)
-      margin-bottom .5rem
+      margin-bottom 1rem
     .sub-list-title
       display flex
       span

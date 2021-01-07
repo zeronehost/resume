@@ -22,7 +22,8 @@ export default {
 
 <style lang="stylus">
 :root
-  font-size 12px
+  font-size 14px
+  color #333
 *
   padding 0
   margin 0

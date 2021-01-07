@@ -1,8 +1,8 @@
 <template>
   <div class="card">
-    <div class="card-title" :class="classes">{{info.title}}</div>
+    <div class="card-title" :class="classes" v-if="info.title">{{info.title}}</div>
     <div class="card-content">
-      <div>{{info.desc}}</div>
+      <div v-if="info.desc">{{info.desc}}</div>
       <x-list v-for="(item, index) in info.lists" :key="index" :info="item" />
     </div>
   </div>
